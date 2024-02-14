@@ -1,9 +1,9 @@
 function functionKeyPress(event) {
-    const playerPressed = event.key; // detect key here
-    console.log('player pressed', playerPressed); // show detected key
+    const playerPressed = event.key; 
+    console.log('player pressed', playerPressed);
     const currentAlphabetElement = document.getElementById('current-alphabet');
-    const currentAlphabet = currentAlphabetElement.innerText; // random key stored
-    const expectedAlphabet = currentAlphabet.toLowerCase(); // make lowercase
+    const currentAlphabet = currentAlphabetElement.innerText;  
+    const expectedAlphabet = currentAlphabet.toLowerCase();
     if (playerPressed === expectedAlphabet) {
         console.log("You get a point")
     }
