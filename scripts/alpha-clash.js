@@ -21,6 +21,9 @@ function functionKeyPress(event) {
         const currentLife = parseInt(currentLifeText);
         const newLife = currentLife - 1;
         currentLifeElement.innerText = newLife;
+        if (newLife === 0) {
+            gameOver();
+        }
     }
 }
 document.addEventListener('keyup', functionKeyPress);
@@ -34,7 +37,16 @@ function continueGame() {
     addBackgroundColorById(alphabet);
 }
 function play() {
+    // hide everything and show playground
     hideElementById('home-screen');
+    hideElementById('final-score')
     showElementById('play-ground');
+    // reset score and life
+    setTextElementValueById('current-life',5);
+    setTextElementValueById('current-score',0);
     continueGame()
+}
+function gameOver(){
+    hideElementById('play-ground');
+    showElementById('final-score')
 }
