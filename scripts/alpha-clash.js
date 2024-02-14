@@ -1,5 +1,9 @@
 function functionKeyPress(event) {
     const playerPressed = event.key;
+    console.log('player pressed', playerPressed);
+    if (playerPressed === 'Escape') {
+        gameOver();
+    }
     const currentAlphabetElement = document.getElementById('current-alphabet');
     const currentAlphabet = currentAlphabetElement.innerText;
     const expectedAlphabet = currentAlphabet.toLowerCase();
@@ -42,11 +46,16 @@ function play() {
     hideElementById('final-score')
     showElementById('play-ground');
     // reset score and life
-    setTextElementValueById('current-life',5);
-    setTextElementValueById('current-score',0);
+    setTextElementValueById('current-life', 5);
+    setTextElementValueById('current-score', 0);
     continueGame()
 }
-function gameOver(){
+function gameOver() {
     hideElementById('play-ground');
-    showElementById('final-score')
+    showElementById('final-score');
+    const lastScore = getElementTextById('current-score');
+    console.log(lastScore);
+    setTextElementValueById('last-score', lastScore);
+    const currentAlphabet = getTextElementById('current-alphabet');
+    removeBackgroundColorById(currentAlphabet);
 }

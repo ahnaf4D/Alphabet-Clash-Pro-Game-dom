@@ -2,12 +2,10 @@ function hideElementById(elementId) {
     const element = document.getElementById(elementId);
     element.classList.add('hidden');
 }
-
 function showElementById(elementId) {
     const element = document.getElementById(elementId);
     element.classList.remove('hidden');
 }
-
 function addBackgroundColorById(elementId) {
     const element = document.getElementById(elementId);
     element.classList.add('bg-orange-400');
@@ -23,7 +21,18 @@ function getARandomAlphabet() {
     const alphabet = alphabets[randomIndex];
     return alphabet;
 }
+
+function getElementTextById(elementId) {
+    const element = document.getElementById(elementId);
+    const text = element.innerText;
+    return text;
+}
 function setTextElementValueById(elementId, value) {
     const element = document.getElementById(elementId);
     element.innerText = value;
+}
+function getTextElementById(elementId) {
+    const element = document.getElementById(elementId);
+    const text = element.innerText;
+    return text;
 }
