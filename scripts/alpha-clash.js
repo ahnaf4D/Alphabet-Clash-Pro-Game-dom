@@ -1,3 +1,4 @@
 function play() {
-    console.log("Play start now");
+    hideElementById('home-screen');
+    showElementById('play-ground');
 }
