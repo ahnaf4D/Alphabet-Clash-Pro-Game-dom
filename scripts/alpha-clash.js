@@ -1,11 +1,13 @@
 function functionKeyPress(event) {
-    const playerPressed = event.key; 
-    console.log('player pressed', playerPressed);
+    const playerPressed = event.key;
     const currentAlphabetElement = document.getElementById('current-alphabet');
-    const currentAlphabet = currentAlphabetElement.innerText;  
+    const currentAlphabet = currentAlphabetElement.innerText;
     const expectedAlphabet = currentAlphabet.toLowerCase();
     if (playerPressed === expectedAlphabet) {
-        console.log("You get a point")
+        console.log("You get a point");
+        console.log("You pressed correctly", expectedAlphabet);
+        removeBackgroundColorById(expectedAlphabet);
+        continueGame();
     }
     else {
         console.log('you missed. You lost a life');
